@@ -1,0 +1,19 @@
+
+div#dane{
+    float: left;
+    width: 160px;
+    height: 500px;
+    border: solid thin grey;
+}
+div#scene{
+    
+}
+label.dane{
+    text-align: right;
+}
+canvas#myCanvas{
+    width: 500px;
+    height: 500px;
+    border: solid thin #222;
+}
+
