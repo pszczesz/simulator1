@@ -1,6 +1,6 @@
 $(document).ready(function () {
     var scene = new Scene();
-    scene.highBoundX = $('#myCanvas').width();
+    scene.highBoundX = $('#myCanvas').width()/2;
     scene.highBoundY = $('#myCanvas').height();
     console.log(scene);
     var ge = new GravEngine(scene);
@@ -13,19 +13,24 @@ $(document).ready(function () {
         intervalID = setInterval(function () {
 //          // console.log("go");
             var dt = 0.1;
-          var radius = 1;
+          var radius = 2;
           //przesuniecie
             ge.move(circle, dt);
+            DrawScene(ctx,0,0,element.width,element.height);
             DrawCircle(element,ctx,
                 circle.pos.x,element.height - circle.pos.y,radius);
            console.log(circle.pos.x+ " "+circle.pos.y);
-        }, 100);
+        }, 40);
         //  DrawCircle(element,ctx,20,50,2);
     });
     $('#stop').click(function () {
         clearInterval(intervalID);
     });
 });
+function DrawScene(ctx,x0,y0,xk,yk){
+    ctx.rect(x0,y0,xk,yk);
+    ctx.stroke();
+}
 function GravEngine(scene) {
     this.scene = scene;
     this.obj = new Circle(100, 100, 0, 20, 0, -10);
