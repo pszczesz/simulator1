@@ -13,13 +13,13 @@ $(document).ready(function () {
         intervalID = setInterval(function () {
 //          // console.log("go");
             var dt = 0.1;
-          var radius = 1;
+          var radius = 4;
           //przesuniecie
             ge.move(circle, dt);
             DrawCircle(element,ctx,
                 circle.pos.x,element.height - circle.pos.y,radius);
            console.log(circle.pos.x+ " "+circle.pos.y);
-        }, 100);
+        }, 50);
         //  DrawCircle(element,ctx,20,50,2);
     });
     $('#stop').click(function () {
